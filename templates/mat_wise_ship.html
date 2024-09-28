@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Material wise shipments</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/simple-datatables/style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/static/img/logo.jpg" alt="">
+        
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn" onclick="changeStyleOnClick()"></i>
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/static/img/human-icon.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Admin</h6>
+              <span>Founder</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/" style="background-color: #fff;color: #012970">
+          <i class="bi bi-grid" style="color: #899bbd;"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/shipentry">
+              <i class="bi bi-circle"></i><span>Shipment entry</span>
+            </a>
+          </li>
+          <li>
+            <a href="/adpay">
+              <i class="bi bi-circle"></i><span>Advance Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shipdoc">
+              <i class="bi bi-circle"></i><span>Shipment documents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portclear">
+              <i class="bi bi-circle"></i><span>Port Clearance</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#" style="color: #4154f1;
+        background: #f6f9ff;">
+          <i class="bi bi-file-earmark" style="color:#4154f1"></i><span>Reports</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/advpaid">
+              <i class="bi bi-circle"></i><span>Advance paid</span>
+            </a>
+          </li>
+          <li>
+            <a href="/advpen">
+              <i class="bi bi-circle"></i><span>Advance pending</span>
+            </a>
+          </li>
+          <li>
+            <a href="/intransit">
+              <i class="bi bi-circle"></i><span>In transit</span>
+            </a>
+          </li>
+          <li>
+            <a href="/notshipped">
+              <i class="bi bi-circle"></i><span>Yet to be shipped</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ETA_ship">
+              <i class="bi bi-circle"></i><span>ETA of shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/mat_wise_ship">
+              <i class="bi bi-circle"></i><span>Material Wise Shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_ship">
+              <i class="bi bi-circle"></i><span>Monthly Shipment Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_item">
+              <i class="bi bi-circle"></i><span>Monthly Item Wise Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/LPR_month">
+              <i class="bi bi-circle"></i><span>Landed Price reports</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Reports Nav -->
+
+             <!-- ---Masters nav---- -->
+             <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-journal-text"></i><span>Master</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="master-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                  <a href="/suppliermaster">
+                    <i class="bi bi-circle"></i><span>Supplier</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indentormaster">
+                    <i class="bi bi-circle"></i><span>Indentor</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/materialmaster">
+                    <i class="bi bi-circle"></i><span>Material</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/shiplinemaster">
+                    <i class="bi bi-circle"></i><span>Shipping Line</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+      
+             <!-- ---Masters nav end ---- -->
+
+    </ul>
+
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+  
+
+    <section class="section">
+      <!-- Recent Sales -->
+      <div class="col-12">
+        <div class="card recent-sales overflow-auto">
+
+          <div class="filter">
+            <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li><a class="dropdown-item" href="#">Today</a></li>
+              <li><a class="dropdown-item" href="#">This Month</a></li>
+              <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">Material wise Shipments</h5>
+
+            <div class="filter-container">
+              <select id="filter-name">
+                <option value="">Select Item</option>
+              </select>
+              <button id="filter-button" class="btn btn-primary">Filter</button>
+            </div>
+
+            <table class="table table-borderless datatable" id="data-table" style="font-size: 12px;">
+              <thead>
+                <tr>
+                  <th scope="col">PO NO.</th>
+                  <th scope="col">Sup Name</th>
+                  <th scope="col">Origin</th>
+                  <th scope="col">Confirm date</th>
+                  <th scope="col">CSN</th>
+                  <th scope="col">Cont. date</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for lal in lala %}
+                {% set materials = [lal[6], lal[7], lal[8]] %}
+                {% set prices = [lal[9], lal[10], lal[11]] %}
+                {% set quantities = [lal[12], lal[13], lal[14]] %}
+                {% for material, price, qty in zip_lists(materials, prices, quantities) %}
+                {% if material and price and qty %} 
+                <tr>
+                  <td>{{lal[0]}}</td>
+                  <td>{{lal[1]}}</td>
+                  <td>{{lal[2]}}</td>
+                  <td>{{lal[3]}}</td>
+                  <td>{{lal[4]}}</td>
+                  <td>{{lal[5]}}</td>
+                  <td>{{material}}</td>
+                  <td>{{qty}}</td>
+                  <td>$ {{price}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+              </tbody>
+            </table>
+            <button id="download-csv" class="btn btn-primary">Download CSV</button>
+          </div>
+
+        </div>
+      </div><!-- End Recent Sales -->
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Metal Care Alloys</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: #license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: #nice-admin-bootstrap-admin-html-template/ -->
+      Developed by <a href="#">Pods Technology Solutions</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/vendor/quill/quill.min.js"></script>
+  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js">
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var uniqueNames = new Set();
+      document.querySelectorAll('#data-table tbody tr').forEach(function(row) {
+          var name = row.querySelector('td:nth-child(7)').innerText;
+          uniqueNames.add(name);
+      });
+      var filterNameSelect = document.getElementById('filter-name');
+      uniqueNames.forEach(function(name) {
+          var option = document.createElement('option');
+          option.value = name;
+          option.innerText = name;
+          filterNameSelect.appendChild(option);
+      });
+
+      document.getElementById('filter-button').addEventListener('click', function() {
+          var filterName = document.getElementById('filter-name').value.toLowerCase();
+
+          document.querySelectorAll('#data-table tbody tr').forEach(function(row) {
+              var rowName = row.querySelector('td:nth-child(7)').innerText.toLowerCase();
+
+              var nameMatch = filterName === "" || rowName === filterName;
+
+              if (nameMatch) {
+                  row.style.display = '';
+              } else {
+                  row.style.display = 'none';
+              }
+          });
+      });
+
+      function downloadCSV(csv, filename) {
+          var csvFile;
+          var downloadLink;
+
+          csvFile = new Blob([csv], {type: "text/csv"});
+
+          downloadLink = document.createElement("a");
+          downloadLink.download = filename;
+          downloadLink.href = window.URL.createObjectURL(csvFile);
+          downloadLink.style.display = "none";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+      }
+
+      function exportTableToCSV(filename) {
+          var csv = [];
+          var headers = document.querySelectorAll("#data-table thead th");
+          var headerRow = [];
+          headers.forEach(function(header) {
+              headerRow.push('"' + header.innerText.replace(/"/g, '""') + '"'); // Escape quotes
+          });
+          csv.push(headerRow.join(","));
+
+          var rows = document.querySelectorAll("#data-table tbody tr");
+
+          rows.forEach(function(row) {
+              if (row.style.display !== 'none') {
+                  var cols = row.querySelectorAll("td, th");
+                  var rowData = [];
+                  cols.forEach(function(col) {
+                      var cellText = col.innerText;
+                      rowData.push('"' + cellText.replace(/"/g, '""') + '"'); // Escape quotes
+                  });
+                  csv.push(rowData.join(","));
+              }
+          });
+
+          downloadCSV(csv.join("\n"), filename);
+      }
+
+      document.getElementById("download-csv").addEventListener("click", function () {
+          exportTableToCSV('Material_Wise_Report.csv');
+      });
+  });
+</script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

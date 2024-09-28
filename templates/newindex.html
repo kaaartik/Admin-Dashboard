@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - Metal Care Alloys </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: LOGO
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: #nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: #license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/static/img/logo.jpg" alt="">
+        
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn" onclick="changeStyleOnClick()"></i>
+    </div><!-- End Logo -->
+
+    <!-- <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div>End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/static/img/human-icon.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Admin</h6>
+              <span>Founder</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li> -->
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-accordion.html">
+              <i class="bi bi-circle"></i><span>Accordion</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Badges</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-breadcrumbs.html">
+              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-buttons.html">
+              <i class="bi bi-circle"></i><span>Buttons</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-cards.html">
+              <i class="bi bi-circle"></i><span>Cards</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-carousel.html">
+              <i class="bi bi-circle"></i><span>Carousel</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-list-group.html">
+              <i class="bi bi-circle"></i><span>List group</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-modal.html">
+              <i class="bi bi-circle"></i><span>Modal</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-tabs.html">
+              <i class="bi bi-circle"></i><span>Tabs</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-pagination.html">
+              <i class="bi bi-circle"></i><span>Pagination</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-progress.html">
+              <i class="bi bi-circle"></i><span>Progress</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-spinners.html">
+              <i class="bi bi-circle"></i><span>Spinners</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-tooltips.html">
+              <i class="bi bi-circle"></i><span>Tooltips</span>
+            </a>
+          </li>
+        </ul>
+      </li>End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/shipentry">
+              <i class="bi bi-circle"></i><span>Shipment entry</span>
+            </a>
+          </li>
+          <li>
+            <a href="/adpay">
+              <i class="bi bi-circle"></i><span>Advance Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shipdoc">
+              <i class="bi bi-circle"></i><span>Shipment documents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portclear">
+              <i class="bi bi-circle"></i><span>Port Clearance</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-earmark"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/advpaid">
+              <i class="bi bi-circle"></i><span>Advance paid</span>
+            </a>
+          </li>
+          <li>
+            <a href="/advpen">
+              <i class="bi bi-circle"></i><span>Advance pending</span>
+            </a>
+          </li>
+          <li>
+            <a href="/intransit">
+              <i class="bi bi-circle"></i><span>In transit</span>
+            </a>
+          </li>
+          <li>
+            <a href="/notshipped">
+              <i class="bi bi-circle"></i><span>Yet to be shipped</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ETA_ship">
+              <i class="bi bi-circle"></i><span>ETA of shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/mat_wise_ship">
+              <i class="bi bi-circle"></i><span>Material Wise Shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_ship">
+              <i class="bi bi-circle"></i><span>Monthly Shipment Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_item">
+              <i class="bi bi-circle"></i><span>Monthly Item Wise Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/LPR_month">
+              <i class="bi bi-circle"></i><span>Landed Price reports</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Reports Nav -->
+
+             <!-- ---Masters nav---- -->
+             <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-journal-text"></i><span>Master</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="master-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                  <a href="/suppliermaster">
+                    <i class="bi bi-circle"></i><span>Supplier</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indentormaster">
+                    <i class="bi bi-circle"></i><span>Indentor</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/materialmaster">
+                    <i class="bi bi-circle"></i><span>Material</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/shiplinemaster">
+                    <i class="bi bi-circle"></i><span>Shipping Line</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+      
+             <!-- ---Masters nav end ---- -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <!-- <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li> -->
+
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Booked</h5>
+
+                  <div class="d-flex align-items-center">
+                    <!-- <div class="container d-flex">
+                      <div class="circular-progress">
+                        <div class="value-container">0%</div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <a href="">view more</a>
+                      </div>
+                    </div>
+                    <div class="container d-flex">
+                      <div class="circular-progress6">
+                        <div class="value-container6">0%</div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <a href="">view more</a>
+                      </div>
+                    </div> -->
+
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>2500 tons</h6>
+                      <span class="text-success small pt-1 fw-bold">Total Quantity</span>
+
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center" style="padding: 32px 0;">
+
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="  color: #ff771d;
+                    background: #ffecdf;">
+                      <i class="bi bi-card-checklist"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>50</h6>
+                      <span class="text-success small pt-1 fw-bold">Number of Consignments</span>
+
+                    </div>
+
+                  </div>
+                  <div class="d-flex align-items-center">
+
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="  color: #2eca6a;
+                    background: #e0f8e9;">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">Total Value</span>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Advance Pending</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="container d-flex">
+                      <div class="circular-progress">
+                        <div class="value-container">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: #032C73;
+                          background: #cadcff;">
+                            <i class="bi bi-cart"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>35</b></p>
+                        <h5><b>Quantity</b></h5>
+                      </div>
+                    </div>
+                    <div class="container d-flex">
+                      <div class="circular-progress5">
+                        <div class="value-container5">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: rgb(33 167 98);
+                          background: rgb(203 255 202);">
+                            <i class="bi bi-currency-dollar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <h5><b>Value</b></h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Shipped & Intransit</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="container d-flex">
+                      <div class="circular-progress1">
+                        <div class="value-container1">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: #032C73;
+                          background: #cadcff;">
+                            <i class="bi bi-cart"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>45</b></p>
+                        <h5><b>Quantity</b></h5>
+                      </div>
+                    </div>
+                    <div class="container d-flex">
+                      <div class="circular-progress6">
+                        <div class="value-container6">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: rgb(33 167 98);
+                          background: rgb(203 255 202);">
+                            <i class="bi bi-currency-dollar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <h5><b>Value</b></h5>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Yet to be Shipped</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="container d-flex">
+                      <div class="circular-progress2">
+                        <div class="value-container2">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: #032C73;
+                                      background: #cadcff;">
+                            <i class="bi bi-cart"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>115</b></p>
+                        <h5><b>Quantity</b></h5>
+                      </div>
+                    </div>
+
+                    <div class="container d-flex">
+                      <div class="circular-progress7">
+                        <div class="value-container7">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: rgb(33 167 98);
+                                      background: rgb(203 255 202);">
+                            <i class="bi bi-currency-dollar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <h5><b>Value</b></h5>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Arrived</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="container d-flex">
+                      <div class="circular-progress3">
+                        <div class="value-container3">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: #032C73;
+                          background: #cadcff;">
+                            <i class="bi bi-cart"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>59</b></p>
+                        <h5><b>Quantity</b></h5>
+                      </div>
+                    </div>
+                    <div class="container d-flex">
+                      <div class="circular-progress8">
+                        <div class="value-container8">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style=" color: rgb(33 167 98);
+                          background: rgb(203 255 202);">
+                            <i class="bi bi-currency-dollar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <h5><b>Value</b></h5>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Cleared </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="container d-flex">
+                      <div class="circular-progress4">
+                        <div class="value-container4">0%</div>
+                      </div>
+                      <div class="content">
+                        <p><b>15</b></p>
+                        <h5><b>Quantity</b></h5>
+                      </div>
+                    </div>
+                    <div class="container d-flex">
+                      <div class="circular-progress9">
+                        <div class="value-container9">0%</div>
+                      </div>
+                      <div class="content">
+                        <p><b>200</b></p>
+                        <h5><b>Value</b></h5>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li><a class="dropdown-item" href="/">View More</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Recent Sales </h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">PO NO.</th>
+                        <th scope="col">Supplier Name</th>
+                        <th scope="col">Material Name</th>
+                        <th scope="col">Quantity arrived</th>
+                        <th scope="col">Quantity left</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Edit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Admin</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number one</a></td>
+                        <td>40 tons</td>
+                        <td>60 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #dc3545;">Pending</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Kartik Sharma</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number two</a></td>
+                        <td>20 tons</td>
+                        <td>60 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown1()" class="dropbtn" id="dropdownButton1"
+                              style="background-color: #FFCC00;">In Transit</button>
+                            <div id="myDropdown1" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Yash Bhoite</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number three</a></td>
+                        <td>30 tons</td>
+                        <td>30 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #fd7e14;">Not Shipped</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Faizan Kalam</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number four</a></td>
+                        <td>20 tons</td>
+                        <td>40 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #20c997;">Arrived</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Admin</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number five</a></td>
+                        <td>20 tons</td>
+                        <td>10 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #198754;">Cleared</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Kartik Sharma</td>
+                        <td><a href="#" class="text-primar">Hello this is shipment number six</a></td>
+                        <td>50 tons</td>
+                        <td>30 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #FFCC00;">In Transit</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Faizan Kalam</td>
+                        <td><a href="#" class="text-primary">Hello this is shipment number seven</a></td>
+                        <td>30 tons</td>
+                        <td>20 tons</td>
+                        <td>$165</td>
+                        <td>
+                          <div class="t-dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn" id="dropdownButton"
+                              style="background-color: #dc3545;">Pending</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a onclick="selectOption('Pending', '#dc3545')">Pending</a>
+                              <a onclick="selectOption('In Transit', '#FFCC00')">In Transit</a>
+                              <a onclick="selectOption('Not Shipped', '#fd7e14')">Not Shipped</a>
+                              <a onclick="selectOption('Arrived', '#20c997')">Arrived</a>
+                              <a onclick="selectOption('Cleared', '#198754')">Cleared</a>
+                              <!-- Add more options as needed -->
+                            </div>
+                          </div>
+                        </td>
+                        <td><a href="/shipentry" style="color: black;"><svg xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+          </div>
+        </div><!-- End Left side columns -->
+
+
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Metal Care Alloys</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Developed by <a href="#">Pods Technology Solutions</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/vendor/quill/quill.min.js"></script>
+  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("myDropdown");
+      dropdown.classList.toggle("show");
+    }
+
+    function selectOption(option, bgColor) {
+      var button = document.getElementById("dropdownButton");
+      button.innerHTML = option;
+      button.style.backgroundColor = bgColor;
+      toggleDropdown(); // Close the dropdown after selection
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    function toggleDropdown1() {
+      var dropdown = document.getElementById("myDropdown1");
+      dropdown.classList.toggle("show");
+    }
+
+    function selectOption(option, bgColor) {
+      var button = document.getElementById("dropdownButton1");
+      button.innerHTML = option;
+      button.style.backgroundColor = bgColor;
+      toggleDropdown1(); // Close the dropdown after selection
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

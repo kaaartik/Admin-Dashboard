@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Shipment Documents</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/static/img/logo.jpg" alt="">
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn" onclick="changeStyleOnClick()"></i>
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/static/img/human-icon.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Admin</h6>
+              <span>Founder</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/" style="background-color: #fff;color: #012970">
+          <i class="bi bi-grid" style="color: #899bbd;"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#" style="color: #4154f1;
+        background: #f6f9ff;">
+          <i class="bi bi-journal-text" style="color:#4154f1"></i><span>Forms</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/shipentry">
+              <i class="bi bi-circle"></i><span>Shipment entry</span>
+            </a>
+          </li>
+          <li>
+            <a href="/adpay">
+              <i class="bi bi-circle"></i><span>Advance Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shipdoc">
+              <i class="bi bi-circle"></i><span>Shipment documents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portclear">
+              <i class="bi bi-circle"></i><span>Port Clearance</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-earmark"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/advpaid">
+              <i class="bi bi-circle"></i><span>Advance paid</span>
+            </a>
+          </li>
+          <li>
+            <a href="/advpen">
+              <i class="bi bi-circle"></i><span>Advance pending</span>
+            </a>
+          </li>
+          <li>
+            <a href="/intransit">
+              <i class="bi bi-circle"></i><span>In transit</span>
+            </a>
+          </li>
+          <li>
+            <a href="/notshipped">
+              <i class="bi bi-circle"></i><span>Yet to be shipped</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ETA_ship">
+              <i class="bi bi-circle"></i><span>ETA of shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/mat_wise_ship">
+              <i class="bi bi-circle"></i><span>Material Wise Shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_ship">
+              <i class="bi bi-circle"></i><span>Monthly Shipment Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_item">
+              <i class="bi bi-circle"></i><span>Monthly Item Wise Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/LPR_month">
+              <i class="bi bi-circle"></i><span>Landed Price reports</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Reports Nav -->
+
+      <!-- ---Masters nav---- -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Master</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="master-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/suppliermaster">
+              <i class="bi bi-circle"></i><span>Supplier</span>
+            </a>
+          </li>
+          <li>
+            <a href="/indentormaster">
+              <i class="bi bi-circle"></i><span>Indentor</span>
+            </a>
+          </li>
+          <li>
+            <a href="/materialmaster">
+              <i class="bi bi-circle"></i><span>Material</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shiplinemaster">
+              <i class="bi bi-circle"></i><span>Shipping Line</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- ---Masters nav end ---- -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <h1 style="text-align: center;margin-top: 20px;color: #032C73;font-weight: bold;">SHIPMENT DOCUMENTS</h1>
+    <form class="mx-auto shipforms" action="/ship_doc_data" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="PONO">PONO</label>
+            <input type="text" pattern="^[A-Za-z0-9\/\-]*$" min="0" required class="form-control" id="pono" name="pono">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="Invoiceno">Invoice no </label>
+            <input type="text" pattern="^[A-Za-z0-9\/\-]*$" min="0" required class="form-control" id="invno"
+              name="invno">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="CSN">Contract Sales no </label>
+            <input type="text" pattern="^[A-Za-z0-9\/\-]*$" min="0" required class="form-control" id="CSN" name="CSN">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="materialname">Material Name</label>
+            <select class="form-control form-select" id="materialname" name="materialname">
+              <option value="" disabled selected>Select Material</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="invoicedate">Invoice Date</label>
+            <input type="date" class="form-control" id="invdate" name="invdate" required>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="InvoiceQuantity">Invoice Quantity</label>
+            <input type="number" min="0" required class="form-control" id="invquantity" name="invquantity" step="0.01">
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="InvoiceAmt">Invoice Amount</label>
+            <input type="number" min="0" required class="form-control" id="invamt" name="invamt" step="0.01">
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="Amount">Amount Pending <b style="color: blue;">*</b></label>
+            <input type="number" min="0" required class="form-control" id="pendingamt" name="pendingamt" step="0.01">
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="Containerno">Container No.</label>
+            <input type="text" pattern="^[A-Za-z0-9]*$" min="0" required class="form-control" id="containerno"
+              name="containerno">
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="PoA">Port of Arrival</label>
+            <input type="text" class="form-control" id="portarr" name="portarr"
+              onkeydown="return /[a-zA-Z ]/i.test(event.key)" required>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="ShippingLine">Shipping Line</label>
+            <select class="form-control form-select" id="shippingline" name="shippingline">
+              <option value="" disabled selected>Select Line</option>
+              {% for name in names %}
+              <option value="{{ name[0] }}">{{ name[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="PoS">Port of shipment</label>
+            <input type="text" class="form-control" id="portship" name="portship"
+              onkeydown="return /[a-zA-Z ]/i.test(event.key)" required>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="BLNo">BL No.</label>
+            <input type="text" pattern="^[A-Za-z0-9\/\-]*$" min="0" required class="form-control" id="blno" name="blno">
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="ETA">ETA</label>
+            <input type="date" class="form-control" id="eta" name="eta" placeholder="DD/MM/YYYY" required>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="ETD">ETD</label>
+            <input type="date" class="form-control" id="etd" name="etd" placeholder="DD/MM/YYYY" required>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="DFD">Detention Free Days</label>
+            <input type="number" min="0" required class="form-control" id="detfreeday" name="detfreeday">
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="DFT">Detention free till <b style="color: blue;">*</b></label>
+            <input type="date" class="form-control" id="detfreetill" name="detfreetill" placeholder="DD/MM/YYYY"
+              required>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="Transittime">Transit time(in days) <b style="color: blue;">*</b></label>
+            <input type="number" min="0" required class="form-control" id="transtime" name="transtime">
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="CHA">CHA</label>
+            <input type="text" class="form-control" required id="asscha" name="asscha"
+              onkeydown="return /[a-zA-Z0-9 ]/i.test(event.key)">
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="submit-btn" style="text-align: center;">
+        <button type="submit" class="btn btn-primary">SUBMIT DOCUMENTS</button>
+      </div><br>
+      <div class="submit-btn" style="text-align: center;">
+        <button type="button" class="btn btn-primary" onclick="fetchDetails()">FETCH DETAILS</button>
+      </div>
+
+    </form>
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Metal Care Alloys</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+
+      Developed by <a href="#">Pods Technology Solutions</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script>
+    document.getElementById('pono').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        myFunction();
+      }
+    });
+
+
+    function myFunction() {
+      var PONO = document.getElementById('pono').value;
+
+      $.ajax({
+        type: "POST",
+        url: "/fetch_materials",
+        data: { 'PONO': PONO },
+        success: function (response) {
+          updateSelectOptions(response.materials);
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      });
+    }
+
+    function updateSelectOptions(materials) {
+      var select = document.getElementById('materialname');
+      select.innerHTML = '<option value="" disabled selected>Select Material</option>'; // Clear previous options
+
+      materials.forEach(function (material) {
+        var materialNames = [material.materialname, material.materialname2, material.materialname3];
+        materialNames.forEach(function (name) {
+          if (name) { // Check if the name is not empty or null
+            var option = document.createElement('option');
+            option.value = name;
+            option.text = name;
+            select.appendChild(option);
+          }
+        });
+      });
+    }
+
+
+    function addDaysToDate(dateString, days) {
+      let date = new Date(dateString);
+      date.setDate(date.getDate() + days);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+    function fetchDetails() {
+      var PONO = document.getElementById('pono').value;
+
+      // Perform an AJAX request to fetch the pending amount
+      $.ajax({
+        type: "POST",
+        url: "/fetch_details",
+        data: { 'PONO': PONO },
+        success: function (response) {
+          console.log(response);
+          pendingamt = parseFloat(response.pendingamt);
+          invoiceamt = parseFloat(document.getElementById('invamt').value);
+          console.log(pendingamt)
+          console.log(invoiceamt)
+          document.getElementById('pendingamt').value = (pendingamt - invoiceamt).toFixed(2);
+        },
+        error: function (error) {
+          // console.log(error);
+        }
+      });
+      console.log("yashh")
+      var eta = document.getElementById('eta').value;
+      var etd = document.getElementById('etd').value;
+      //for detention free till-------
+      let etadate = new Date(eta)
+      let etddate = new Date(etd)
+      var dfd = document.getElementById('detfreeday').value;
+      const detFreeTill = addDaysToDate(eta, parseInt(dfd));
+      document.getElementById('detfreetill').value = detFreeTill;
+
+      //for transit time--------------
+
+      const diffTime = Math.abs(etddate - etadate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById('transtime').value = diffDays;
+    }
+
+    // Function to add one day to a given date
+
+  </script>
+  <script>
+    const etdInput = document.getElementById('etd');
+    const etaInput = document.getElementById('eta');
+
+    // Function to add days to a date
+    function addDays(date, days) {
+      const result = new Date(date);
+      result.setDate(result.getDate() + days);
+      return result;
+    }
+
+    // Event listener for ETD input
+    etdInput.addEventListener('change', function () {
+      const etdDate = new Date(this.value);
+      const etaMinDate = addDays(etdDate, 1);
+      etaInput.min = etaMinDate.toISOString().split('T')[0];
+
+      // If ETA is earlier than the minimum date, adjust it
+      if (etaInput.value && new Date(etaInput.value) < etaMinDate) {
+        etaInput.value = etaMinDate.toISOString().split('T')[0];
+      }
+    });
+
+    // Event listener for ETA input
+    etaInput.addEventListener('change', function () {
+      const etaDate = new Date(this.value);
+      const etdMaxDate = addDays(etaDate, -1);
+      etdInput.max = etdMaxDate.toISOString().split('T')[0];
+
+      // If ETD is later than the maximum date, adjust it
+      if (etdInput.value && new Date(etdInput.value) > etdMaxDate) {
+        etdInput.value = etdMaxDate.toISOString().split('T')[0];
+      }
+    });
+  </script>
+  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/vendor/quill/quill.min.js"></script>
+  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

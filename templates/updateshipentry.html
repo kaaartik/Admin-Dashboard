@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Updated Shipment entry</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/static/img/logo.jpg" alt="">
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn" onclick="changeStyleOnClick()"></i>
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/static/img/human-icon.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Admin</h6>
+              <span>Founder</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/" style="background-color: #fff;color: #012970">
+          <i class="bi bi-grid" style="color: #899bbd;"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#" style="color: #4154f1;
+      background: #f6f9ff;">
+          <i class="bi bi-journal-text" style="color:#4154f1"></i><span>Forms</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/shipentry">
+              <i class="bi bi-circle"></i><span>Shipment entry</span>
+            </a>
+          </li>
+          <li>
+            <a href="/adpay">
+              <i class="bi bi-circle"></i><span>Advance Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shipdoc">
+              <i class="bi bi-circle"></i><span>Shipment documents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portclear">
+              <i class="bi bi-circle"></i><span>Port Clearance</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-earmark"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/advpaid">
+              <i class="bi bi-circle"></i><span>Advance paid</span>
+            </a>
+          </li>
+          <li>
+            <a href="/advpen">
+              <i class="bi bi-circle"></i><span>Advance pending</span>
+            </a>
+          </li>
+          <li>
+            <a href="/intransit">
+              <i class="bi bi-circle"></i><span>In transit</span>
+            </a>
+          </li>
+          <li>
+            <a href="/notshipped">
+              <i class="bi bi-circle"></i><span>Yet to be shipped</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ETA_ship">
+              <i class="bi bi-circle"></i><span>ETA of shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/mat_wise_ship">
+              <i class="bi bi-circle"></i><span>Material Wise Shipments</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_ship">
+              <i class="bi bi-circle"></i><span>Monthly Shipment Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/month_item">
+              <i class="bi bi-circle"></i><span>Monthly Item Wise Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/LPR_month">
+              <i class="bi bi-circle"></i><span>Landed Price reports</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Reports Nav -->
+
+      <!-- ---Masters nav---- -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Master</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="master-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/suppliermaster">
+              <i class="bi bi-circle"></i><span>Supplier</span>
+            </a>
+          </li>
+          <li>
+            <a href="/indentormaster">
+              <i class="bi bi-circle"></i><span>Indentor</span>
+            </a>
+          </li>
+          <li>
+            <a href="/materialmaster">
+              <i class="bi bi-circle"></i><span>Material</span>
+            </a>
+          </li>
+          <li>
+            <a href="/shiplinemaster">
+              <i class="bi bi-circle"></i><span>Shipping Line</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- ---Masters nav end ---- -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <h1 style="text-align: center;margin-top: 20px;color: #032C73;font-weight: bold;">SHIPMENT ENTRY</h1>
+    <form class="mx-auto shipforms" action="{{url_for('update_ship_entry_data')}}" method="post"
+      enctype="multipart/form-data">
+      {% for lal in lala %}
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputEmail1">PO No.</label>
+            <input type="text" class="form-control" id="PONO" name="PONO" value="{{lal[0]}}"
+              pattern="^[A-Za-z0-9\/\-]*$" min="0">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Indentor</label>
+            <select class="form-control form-select" id="indentor" name="indentor">
+              <option value="{{lal[1]}}" selected>{{lal[1]}}</option>
+              {% for indentor in indentors %}
+              <option value="{{ indentor[0] }}">{{ indentor[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Origin</label>
+            <select class="form-control form-select" id="origin" name="origin">
+              <option value="{{lal[3]}}" selected>{{lal[3]}}</option>
+              {% for country in countries %}
+              <option value="{{ country }}">{{ country }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Supplier Name</label>
+            <select class="form-control form-select" id="suppliername" name="suppliername">
+              <option value="{{lal[2]}}" selected>{{lal[2]}}</option>
+              {% for supplier in suppliers %}
+              <option value="{{ lal[0] }}">{{ supplier[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirmation Date</label>
+            <input value="{{lal[4]}}" type="date" class="form-control" id="confirmdate" name="confirmdate"
+              placeholder="DD/MM/YYYY">
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Material 1 Name </label>
+            <select class="form-control form-select" id="materialname" name="materialname" required>
+              <option value="{{lal[5]}}" selected>{{lal[5]}}</option>
+              {% for material in materials %}
+              <option value="{{ material[0] }}">{{ material[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Quantity</label>
+            <input value="{{lal[6]}}" min="0" required type="number" class="form-control" id="quantity" name="quantity">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="padding-right: 0px;">
+              <label for="exampleInputPassword1">Unit</label>
+              <select class="form-control form-select" id="unit" name="unit" required>
+                <option value="USD">Dollar</option>
+                <option value="INR">Ruppee</option>
+                <option value="GBP">Pound</option>
+              </select>
+            </div>
+            <div class="form-group">
+
+              <label for="exampleInputPassword1">Price</label>
+              <input type="number" class="form-control" id="demoprice" name="demoprice" min="0">
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex">
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="conversion1()">></i></button>
+
+            </div>
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="total1()">=</i></button>
+
+            </div>
+            <div class="form-group" style="padding-left: 0px; padding-right: 0%;">
+
+              <label for="exampleInputPassword1">Price (in USD)</label>
+              <input value="{{lal[7]}}" required type="number" class="form-control" id="price" name="price" step="0.01"
+                min="0">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Material 2 Name</label>
+            <select class="form-control form-select" id="materialname2" name="materialname2">
+              <option value="{{lal[8]}}" selected>{{lal[8]}}</option>
+              {% for material in materials %}
+              <option value="{{ material[0] }}">{{ material[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Quantity</label>
+            <input value="{{lal[9]}}" min="0" type="number" class="form-control" id="quantity2" name="quantity2">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="padding-right: 0px;">
+              <label for="exampleInputPassword1">Unit</label>
+              <select class="form-control form-select" id="unit2" name="unit2">
+                <option value="USD">Dollar</option>
+                <option value="INR">Ruppee</option>
+                <option value="GBP">Pound</option>
+              </select>
+            </div>
+            <div class="form-group">
+
+              <label for="exampleInputPassword1">Price</label>
+              <input type="number" class="form-control" id="demoprice2" name="demoprice2" min="0">
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="conversion2()">></i></button>
+            </div>
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="total2()">=</i></button>
+
+            </div>
+            <div class="form-group" style="padding-left: 0px; padding-right: 0%;">
+              <label for="exampleInputPassword1">Price (in USD)</label>
+              <input value="{{lal[10]}}" type="number" class="form-control" id="price2" name="price2" step="0.01"
+                min="0">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Material 3 Name</label>
+            <select class="form-control form-select" id="materialname3" name="materialname3">
+              <option value="{{lal[11]}}" selected>{{lal[11]}}</option>
+              {% for material in materials %}
+              <option value="{{ material[0] }}">{{ material[0] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Quantity</label>
+            <input value="{{lal[12]}}" type="number" class="form-control" id="quantity3" name="quantity3">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="padding-right: 0px;">
+              <label for="exampleInputPassword1">Unit</label>
+              <select class="form-control form-select" id="unit3" name="unit3">
+                <option value="USD">Dollar</option>
+                <option value="INR">Ruppee</option>
+                <option value="GBP">Pound</option>
+              </select>
+            </div>
+            <div class="form-group">
+
+              <label for="exampleInputPassword1">Price</label>
+              <input type="number" class="form-control" id="demoprice3" name="demoprice3" min="0">
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="conversion3()">></i></button>
+            </div>
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="total3()">=</i></button>
+
+            </div>
+            <div class="form-group" style="padding-left: 0px; padding-right: 0%;">
+              <label for="exampleInputPassword1">Price (in USD)</label>
+              <input value="{{lal[13]}}" type="number" class="form-control" id="price3" name="price3" step="0.01"
+                min="0">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME on confirmation (M1)</label>
+            <input value="{{lal[18]}}" required type="number" class="form-control" id="lme1" name="lme1" min="0">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME % (M1) <b style="color: blue;">*</b></label>
+            <input value="{{lal[19]}}" required type="number" class="form-control" id="lmepercent1" name="lmepercent1"
+              step="0.01">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME on confirmation (M2)</label>
+            <input value="{{lal[20]}}" type="number" class="form-control" id="lme2" name="lme2" min="0">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME % (M2) <b style="color: blue;">*</b></label>
+            <input value="{{lal[21]}}" type="number" class="form-control" id="lmepercent2" name="lmepercent2"
+              step="0.01">
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME on confirmation (M3)</label>
+            <input value="{{lal[22]}}" type="number" class="form-control" id="lme3" name="lme3" min="0">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME % (M3) <b style="color: blue;">*</b></label>
+            <input value="{{lal[23]}}" type="number" class="form-control" id="lmepercent3" name="lmepercent3"
+              step="0.01">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Sale Contract date</label>
+            <input value="{{lal[15]}}" required type="date" class="form-control" id="contractsaledate"
+              name="contractsaledate" placeholder="DD/MM/YYYY">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contract sale no.</label>
+            <input value="{{lal[14]}}" min="0" type="text" required class="form-control" id="contractsalesno"
+              name="contractsalesno" pattern="^[A-Za-z0-9\/\-]*$">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Total Quantity <b style="color: blue;">*</b></label>
+            <input value="{{lal[16]}}" min="0" required type="number" class="form-control" id="totalquantity"
+              name="totalquantity">
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+
+          <!-- <div class="form-group" style="padding-right: 0px;">
+              <label for="exampleInputPassword1">Unit</label>
+              <select class="form-control form-select" id="unit" name="unit">
+                <option value="USD">Dollar</option>
+                <option value="INR">Ruppee</option>
+                <option value="GBP">Pound</option>
+              </select>
+            </div> -->
+          <div class="form-group">
+
+            <label for="exampleInputPassword1">Total Price <b style="color: blue;">*</b></label>
+            <input value="{{lal[17]}}" required type="number" class="form-control" id="totalprice" name="totalprice"
+              min="0" step="0.01">
+          </div>
+
+
+        </div>
+        <!-- <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="margin-top: 6%;padding-right: 5%;">
+              <button type="button" class="btn conversionbutton" onclick="conversion()">Convert</i></button>
+            </div>
+            <div class="form-group" style="padding-left: 0px; padding-right: 0%;">
+              <label for="exampleInputPassword1">Price (in USD)</label>
+              <input required type="number" class="form-control" id="price" name="price" step="0.01" min="0">
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME on confirmation</label>
+            <input required type="number" class="form-control" id="lme" name="lme" min="0">
+          </div>
+
+        </div> -->
+        <!-- <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">LME %</label>
+            <input required type="number" class="form-control" id="lmepercent" name="lmepercent" step="0.01">
+          </div>
+
+        </div> -->
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group" style="padding-right: 0px;">
+            <label for="exampleInputPassword1">Payment Terms</label>
+            <select class="form-control form-select" id="payment" name="payment" required>
+
+              <option value="100%CAD">100% CAD</option>
+              <option value="10%adv_BC">10% advance, BAL CAD</option>
+              <option value="20%adv_BC">20% advance, BAL CAD</option>
+              <option value="30%adv_BC">30% advance, BAL CAD</option>
+              <option value="100%adv">100% advance</option>
+              <option value="10%adv_TT">10% advance, BAL TT</option>
+              <option value="20%adv_TT">20% advance, BAL TT</option>
+              <option value="100%adv_LC">100% against LC</option>
+            </select>
+          </div>
+
+        </div>
+        <!-- <div class="col-lg-4 col-md-12 col-sm-12 mx-auto" style="margin-top: 65px;">
+          <button type="button" class="btn conversionbutton" onclick="advanceconversion()">></i></button>
+        </div> -->
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Advance Payment(%) <b style="color: blue;">*</b></label>
+            <input value="{{lal[24]}}" required type="number" class="form-control" id="paymentterms" name="paymentterms"
+              max="100" min="0">
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="submit-btn" style="text-align: center;">
+        <button type="submit" class="btn btn-primary">UPDATE SHIPMENT</button>
+      </div>
+      <br>
+      <div class="submit-btn" style="text-align: center;">
+        <button type="button" class="btn btn-primary" onclick="calcLme();advanceconversion();totaldetails()">CALCULATE
+          SHIPMENT
+          DETAILS %</button>
+      </div>
+      {% endfor %}
+    </form>
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Metal Care Alloys</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+
+      Developed by <a href="#">Pods Technology Solutions</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+
+  <script>
+
+    function calcLme() {
+      var price1 = parseFloat(document.getElementById('price').value);
+      var lme1 = parseFloat(document.getElementById('lme1').value);
+
+      var price2 = parseFloat(document.getElementById('price2').value);
+      var lme2 = parseFloat(document.getElementById('lme2').value);
+
+      var price3 = parseFloat(document.getElementById('price3').value);
+      var lme3 = parseFloat(document.getElementById('lme3').value);
+
+      lmeper1 = (price1 / lme1) * 100;
+      lmeper2 = (price2 / lme2) * 100;
+      lmeper3 = (price3 / lme3) * 100;
+
+      document.getElementById('lmepercent1').value = lmeper1.toFixed(2);
+      document.getElementById('lmepercent2').value = lmeper2.toFixed(2);
+      document.getElementById('lmepercent3').value = lmeper3.toFixed(2);
+
+    }
+    function conversion1() {
+      let apiKey = "4df689dcc4f78950012aaa14";
+      let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+      const amountInput = document.getElementById('demoprice').value;
+      const unitSelect = document.getElementById('unit').value;
+      const convertedAmountInput = document.getElementById('price');
+      const quantity = document.getElementById('quantity').value;
+
+      fromDropdown = unitSelect;
+      toDropdown = "USD";
+      console.log("Outside")
+      //Create References
+      const amount = amountInput;
+      const fromCurrency = fromDropdown;
+      const toCurrency = toDropdown;
+      //If amount input field is not empty
+      if (amount.length != 0) {
+        fetch(api)
+          .then((resp) => resp.json())
+          .then((data) => {
+            let fromExchangeRate = data.conversion_rates[fromCurrency];
+            let toExchangeRate = data.conversion_rates[toCurrency];
+            const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+            console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+            convertedAmountInput.value = convertedAmount.toFixed(2);
+          });
+      } else {
+        alert("Please fill in the amount");
+      }
+    };
+
+
+
+
+    function conversion2() {
+      let apiKey = "4df689dcc4f78950012aaa14";
+      let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+      const amountInput = document.getElementById('demoprice2').value;
+      const unitSelect = document.getElementById('unit2').value;
+      const convertedAmountInput = document.getElementById('price2');
+
+      fromDropdown = unitSelect;
+      toDropdown = "USD";
+      console.log("Outside")
+      //Create References
+      const amount = amountInput;
+      const fromCurrency = fromDropdown;
+      const toCurrency = toDropdown;
+      //If amount input field is not empty
+      if (amount.length != 0) {
+        fetch(api)
+          .then((resp) => resp.json())
+          .then((data) => {
+            let fromExchangeRate = data.conversion_rates[fromCurrency];
+            let toExchangeRate = data.conversion_rates[toCurrency];
+            const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+            console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+            convertedAmountInput.value = convertedAmount.toFixed(2);
+          });
+      } else {
+        alert("Please fill in the amount");
+      }
+    };
+
+    function conversion3() {
+      let apiKey = "4df689dcc4f78950012aaa14";
+      let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+      const amountInput = document.getElementById('demoprice3').value;
+      const unitSelect = document.getElementById('unit3').value;
+      const convertedAmountInput = document.getElementById('price3');
+
+      fromDropdown = unitSelect;
+      toDropdown = "USD";
+      console.log("Outside")
+      //Create References
+      const amount = amountInput;
+      const fromCurrency = fromDropdown;
+      const toCurrency = toDropdown;
+      //If amount input field is not empty
+      if (amount.length != 0) {
+        fetch(api)
+          .then((resp) => resp.json())
+          .then((data) => {
+            let fromExchangeRate = data.conversion_rates[fromCurrency];
+            let toExchangeRate = data.conversion_rates[toCurrency];
+            const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+            console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+            convertedAmountInput.value = convertedAmount.toFixed(2);
+          });
+      } else {
+        alert("Please fill in the amount");
+      }
+    };
+
+    function total1() {
+      console.log("hello");
+      let price = document.getElementById('price').value;
+      let quantity = document.getElementById('quantity').value;
+      console.log(price * quantity)
+      document.getElementById('price').value = (price * quantity).toFixed(2);
+    }
+
+    function total2() {
+      console.log("hello");
+      let price = document.getElementById('price2').value;
+      let quantity = document.getElementById('quantity2').value;
+      console.log(price * quantity)
+      document.getElementById('price2').value = (price * quantity).toFixed(2);
+    }
+
+    function total3() {
+      console.log("hello");
+      let price = document.getElementById('price3').value;
+      let quantity = document.getElementById('quantity3').value;
+      console.log(price * quantity)
+      document.getElementById('price3').value = (price * quantity).toFixed(2);
+    }
+    function totaldetails() {
+      var price1 = Number(document.getElementById('price').value);
+      var price2 = Number(document.getElementById('price2').value);
+      var price3 = Number(document.getElementById('price3').value);
+      let quantity1 = Number(document.getElementById('quantity').value);
+      let quantity2 = Number(document.getElementById('quantity2').value);
+      let quantity3 = Number(document.getElementById('quantity3').value);
+
+      document.getElementById("totalquantity").value = (quantity1 + quantity2 + quantity3)
+      document.getElementById("totalprice").value = (price1 + price2 + price3);
+
+    }
+
+
+    function advanceconversion() {
+      const paymentterms = document.getElementById('payment').value;
+      const advance = document.getElementById('paymentterms');
+      switch (paymentterms) {
+        case "100%CAD":
+          advance.value = 0;
+          break;
+
+        case "10%adv_BC":
+          advance.value = 10;
+          break;
+
+        case "20%adv_BC":
+          advance.value = 20;
+          break;
+
+        case "30%adv_BC":
+          advance.value = 30;
+          break;
+
+        case "100%adv":
+          advance.value = 100;
+          break;
+
+        case "10%adv_TT":
+          advance.value = 10
+          break;
+
+        case "20%adv_TT":
+          advance.value = 20
+          break;
+
+        case "100%adv_LC":
+          advance.value = 0
+          break;
+
+        default:
+          break;
+      }
+
+
+    };
+
+
+
+
+
+  </script>
+  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/vendor/quill/quill.min.js"></script>
+  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
