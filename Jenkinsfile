@@ -6,6 +6,11 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/kaaartik/Admin-Dashboard.git'
             }
         }
+        stage('Install Python venv Package') {
+            steps {
+                sh 'sudo apt-get update && sudo apt-get install -y python3-venv'
+            }
+        }
         stage('Setup Python Virtual Environment') {
             steps {
                 sh '''
