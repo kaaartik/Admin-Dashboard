@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                     python3 -m venv venv          # Create virtual environment
-                    source venv/bin/activate           # Activate virtual environment
+                    . venv/bin/activate           # Activate virtual environment
                     pip install Flask             # Install Flask inside the virtual environment
                 '''
             }
