@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'sudo systemctl restart app'  // Replace 'my-flask-app' with your Flask app service name if needed
+                sh 'sudo systemctl restart my-flask-app.service'  // Replace 'my-flask-app' with your Flask app service name if needed
             }
         }
     }
