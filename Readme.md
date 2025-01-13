@@ -58,4 +58,4 @@ Follow these steps to deploy the project:
    ```bash
    ssh -i your-key.pem ubuntu@<public-ip>
 7. **Access the Application**  
-   Open a browser and navigate to **http://<public-ip>:5000** to view the Admin Dashboard.
+   Open a browser and navigate to **http://(public-ip):5000** to view the Admin Dashboard.
